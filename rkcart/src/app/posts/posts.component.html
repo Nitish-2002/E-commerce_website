@@ -1,0 +1,62 @@
+<div class="car">
+  <!-- <input type="checkbox" checked data-toggle="toggle"> -->
+  <div class="cards">
+    <div
+      class="card cardx"
+      style="
+        width: 38rem;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      "
+      *ngFor="let post of posts"
+    >
+      <img
+        [src]="'http://172.22.30.171:3000/images/' + post.FileName"
+        class="card-img-top"
+        style="height: 251.8px"
+        alt="..."
+      />
+      <div class="card-body">
+        <h5
+          class="card-title"
+          style="
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+            text-align: center;
+          "
+        >
+          {{ post.Title }}
+        </h5>
+        <p><img src="../../assets/icons8-eye-32.png" /> {{ post.Views }}</p>
+        <button
+          class="btn btn-outline-dark button"
+          style="margin-left: 260px; border: 2px solid; font-size: 15px"
+          (click)="ViewMore(post.PostId)"
+        >
+          View More
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="noPost" *ngIf="noPostsavailable">
+    <img src="../../assets/nopost.jfif" />
+  </div>
+</div>
+<nav aria-label="Page navigation example">
+  <ul class="pagination totalpages">
+    <a class="page-item">
+      <button class="page-link" (click)="Prev()">Previous</button>
+    </a>
+    <a
+      class="page-item active"
+      aria-current="page"
+      *ngFor="let page of totalPages()"
+      [class.active]="currentPage === page"
+    >
+      <button class="page-link" (click)="goTopage(page)">{{ page }}</button>
+    </a>
+    <a class="page-item">
+      <button class="page-link" (click)="Next()">Next</button>
+    </a>
+  </ul>
+</nav>

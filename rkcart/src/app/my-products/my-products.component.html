@@ -1,0 +1,23 @@
+<div class="car">
+  <div class="submitted" *ngIf="submitted">
+    <p>{{ Response }}</p>
+  </div> 
+    <div class="cards">
+        <div class="card" style="width: 38rem;   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    ;" *ngFor="let post of posts">
+          <img [src]="'http://172.22.30.171:3000/images/' + post.FileName" class="card-img-top" style="height: 251.8px;" alt="...">
+          <div class="card-body">
+            <h5 class="card-title" style="font-family:Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold; text-align: center;">{{post.Title}}</h5>
+            <p><img src="../../assets/icons8-eye-32.png">              {{post.Views}}</p>
+            <button class="btn btn-outline-dark button" style="margin-left: 260px; border: 2px solid; font-size: 15px;" (click)="ViewMore(post.PostId)">View More</button>
+          </div>
+          <div class="buttons">
+          <button class="btn btn-outline-success edit" (click)="OnEdit(post.PostId)">Edit</button>
+          <button class="btn btn-outline-danger delete" (click)="OnDelete(post.PostId)">Delete</button>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="noPost" *ngIf="noPostsavailable">
+      <img src="../../assets/nopost.jfif" />
+    </div>

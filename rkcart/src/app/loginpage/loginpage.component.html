@@ -1,0 +1,119 @@
+<div style="width:98.92vw">
+<div class="header">
+  <img width="100px" style="margin-left: 50px;" src="../../assets/logo-removebg-preview.png">
+  <div>
+    <span>Contact</span>
+    <img  src="../../assets/gp.png" />
+    <img  src="../../assets/appstore.png" />
+  </div>
+</div>
+<div class="register" style="width:98.92vw;  height:90vh; position:fixed; top:-20px">
+  <div>
+  <p class="caption"><a style="text-decoration: underline;">RK Store:<br> </a>Where Fashion Meets Convenience...</p>
+</div>
+  <div>
+    <div>
+    <div class="register__part1">
+      
+      <div [formGroup]="CartFormGroup" class="register__part1__inputs">
+        <div>
+          <p><b>Username:</b></p>
+          <input type="text" class="form-control" placeholder="Please Enter the Password..."
+          formControlName="username" />
+          <div
+            *ngIf="
+             ( CartFormGroup.get('username')?.touched &&
+             CartFormGroup.get('username')?.hasError('required')) || warnings
+            "
+          >
+            <small class="error-text"><b>**Please enter the username</b></small>
+          </div>
+        </div>
+        <div>
+          <p><b>Password:</b></p>
+          <input
+
+            type="{{ showPassword ? 'text' : 'password' }}"
+            class="form-control"
+            formControlName="password"
+           
+            placeholder="Please Enter the Password..."
+          />
+          <img
+          src="{{
+            showPassword
+              ? 'https://media.geeksforgeeks.org/wp-content/uploads/20210917145551/eye.png'
+              : 'https://media.geeksforgeeks.org/wp-content/uploads/20210917150049/eyeslash.png'
+          }}"
+          width="25px"
+          height="25px"
+          style="
+            position: absolute;
+            margin-top: -35px;
+            margin-left: 450px;
+          "
+          (click)="passwordType()"
+          id="togglePassword"
+        />
+          <div
+            *ngIf="
+             (CartFormGroup.get('password')?.touched &&
+              CartFormGroup.get('password')?.hasError('required')) || warnings
+            "
+          >
+            <small class="error-text"><b>**Please enter the password</b></small>
+          </div>
+        </div>
+        <div>
+          <button
+            type="button"
+            (click)="Onsubmit()"
+            class="btn btn-danger reg-btn"
+            
+          >
+            Login
+          </button>
+        </div>
+      </div>
+      <p class="registred__login">Don't have an account ?<span>Please Do <a routerLink="/register" routerLinkActive="active">Register</a></span></p>
+      <div class="register__part1__texts">
+        <span> or continue with </span>
+      </div>
+      <div class="register__part1__images">
+        <div>
+          <img src="../../assets/icons8-twitter-50.png" />
+          <p>Twitter</p>
+        </div>
+        <div>
+          <img src="../../assets/icons8-facebook-50.png" />
+          <p>Facebook</p>
+        </div>
+        <div>
+          <img src="../../assets/icons8-google-50.png" />
+          <p>Google</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+     class="resposnsee"
+    *ngIf="submitted"
+    style="
+      width: 18rem;
+      height: 10rem;
+      position: fixed;
+      left: 1400px;
+      top: 620px;
+    "
+  >
+    <!-- <button type="button" style="margin-left: 250px; margin-top: 10px;" class="btn-close" aria-label="Close"></button> -->
+    <div>
+      <p style="text-align: center; margin-top: 20px">{{ Response }}</p>  
+    </div>
+  </div>
+ </div>
+ <div class="sales">
+  <img src="../../assets/sale-removebg-preview.png" />
+ </div>
+</div>
+</div>

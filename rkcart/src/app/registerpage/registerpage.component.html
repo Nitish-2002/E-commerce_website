@@ -1,0 +1,183 @@
+
+
+<div style="width: 98.92vw">
+  <div class="header">
+    <img
+      width="100px"
+      style="margin-left: 50px"
+      src="../../assets/logo-removebg-preview.png"
+    />
+    <div>
+      <span>Contact</span>
+      <img src="../../assets/gp.png" />
+      <img src="../../assets/appstore.png" />
+    </div>
+  </div>
+
+  <div
+    class="register"
+    style="width: 98.92vw; height: 90vh; position: fixed; top: -20px"
+  >
+    <div>
+      <p class="caption">
+        <a style="text-decoration: underline">RK Store:<br /> </a>Where Fashion
+        Meets Convenience...
+      </p>
+    </div>
+    <div>
+      <div>
+        <div class="register__part1">
+          <div [formGroup]="CartFormGroup" class="register__part1__inputs">
+            <div>
+              <p><b>Name:</b></p>
+              <input
+                type="text"
+                placeholder="Please Enter Name.."
+                class="form-control"
+                formControlName="name"
+              />
+              <div
+                *ngIf="
+                  CartFormGroup.get('name')?.touched &&
+                  CartFormGroup.get('name')?.hasError('required')
+                "
+              >
+                <small class="error-text"
+                  ><b>**Please enter the name</b></small
+                >
+              </div>
+            </div>
+            <div>
+              <p><b>Email:</b></p>
+              <input
+                type="text"
+                placeholder="Please Enter Email Id.."
+                class="form-control"
+                formControlName="email"
+              />
+              <div
+                *ngIf="
+                  CartFormGroup.get('email')?.touched &&
+                  CartFormGroup.get('email')?.hasError('required')
+                "
+              >
+                <small class="error-text"
+                  ><b>**Please enter the email</b></small
+                >
+              </div>
+              <div *ngIf="
+              CartFormGroup.get('email')?.hasError('email')
+            ">
+                <small class="error-text"
+                ><b>**Please enter the valid email address</b></small
+              >
+              </div>
+            </div>
+            <div>
+              <p><b>Username:</b></p>
+              <input
+                type="text"
+                placeholder="Please Enter Userame.."
+                class="form-control"
+                formControlName="username"
+              />
+              <div
+                *ngIf="
+                  CartFormGroup.get('username')?.touched &&
+                  CartFormGroup.get('username')?.hasError('required')
+                "
+              >
+                <small class="error-text"
+                  ><b>**Please enter the username</b></small
+                >
+              </div>
+            </div>
+            <div>
+              <p><b>Password:</b></p>
+              <input
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                type="{{ showPassword ? 'text' : 'password' }}"
+                class="form-control"
+                placeholder="Please Enter Password.."
+                style="position: relative"
+                formControlName="password"
+              />
+              <img
+                src="{{
+                  showPassword
+                    ? 'https://media.geeksforgeeks.org/wp-content/uploads/20210917145551/eye.png'
+                    : 'https://media.geeksforgeeks.org/wp-content/uploads/20210917150049/eyeslash.png'
+                }}"
+                width="25px"
+                height="25px"
+                style="
+                  position: absolute;
+                  margin-top: -35px;
+                  margin-left: 450px;
+                "
+                (click)="passwordType()"
+                id="togglePassword"
+              />
+              <p
+                *ngIf="
+                  warningNote &&
+                  !(
+                    CartFormGroup.get('password')?.touched &&
+                    CartFormGroup.get('password')?.hasError('required')
+                  )
+                "
+              >
+                {{ warningNote }}
+              </p>
+
+              <div
+                *ngIf="
+                  CartFormGroup.get('password')?.touched &&
+                  CartFormGroup.get('password')?.hasError('required')
+                "
+              >
+                <small class="error-text"
+                  ><b>**Please enter the password</b></small
+                >
+              </div>
+            </div>
+            <div>
+              <button
+                type="button"
+                (click)="Onsubmit()"
+                class="btn btn-danger reg-btn"
+              >
+                Register
+              </button>
+            </div>
+          </div>
+          <p class="registred__login">
+            Already Registered ?<span
+              >Please Do
+              <a routerLink="" routerLinkActive="active">Login</a></span
+            >
+          </p>
+         
+        </div>
+      </div>
+      <div
+      class="resposnsee"
+       *ngIf="cardbool"
+        style="
+          width: 28rem;
+          height: 10rem;
+          position: fixed;
+          left: 1400px;
+          top: 620px;
+        "
+      >
+        <div>
+          <p style="text-align: center; height: 50px; font-size: 20px; margin-top: 20px; background-color: black; color: whitesmoke;">{{ Response }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="sales">
+      <img src="../../assets/sale-removebg-preview.png" />
+    </div>
+  </div>
+</div>

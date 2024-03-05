@@ -1,0 +1,121 @@
+<!-- <app-header></app-header> -->
+<div class="total__container">
+  <img class="Easysell-logo" src="../../assets/Easysell-logo.png" />
+<div class="container">
+  <div  *ngIf="submitted" class="submitted">
+    <p>{{ Response }}</p>
+  </div>
+  <form [formGroup]="createPostformGroup">
+    <div>
+      <span> Title: </span>
+      <input id=submit
+        type="text"
+        placeholder="Enter the Product Title"
+        formControlName="Title"
+        class="form-control"
+      />
+      <div
+        *ngIf="
+          createPostformGroup.get('Title')?.touched &&
+          createPostformGroup.get('Title')?.hasError('required')
+        "
+      >
+        <small class="error-text">Please enter the Title</small>
+      </div>
+    </div>
+    <div>
+      <span>Description: </span>
+      <input
+        type="text"
+        placeholder="Enter the Product Description"
+        formControlName="Description"
+        class="form-control"
+      />
+      <div
+        *ngIf="
+          createPostformGroup.get('Description')?.touched &&
+          createPostformGroup.get('Description')?.hasError('required')
+        "
+      >
+        <small class="error-text">Please enter the Description</small>
+      </div>
+    </div>
+    <div>
+      <span> Address: </span>
+      <input
+        type="text"
+        placeholder="Enter the Product Address"
+        formControlName="Address"
+        class="form-control"
+      />
+      <div
+        *ngIf="
+          createPostformGroup.get('Address')?.touched &&
+          createPostformGroup.get('Address')?.hasError('required')
+        "
+      >
+        <small class="error-text">Please enter the Address</small>
+      </div>
+    </div>
+    <div>
+      <span> Date: </span>
+      <input type="date" value="date" formControlName="date" class="form-control" />
+      <div
+        *ngIf="
+          createPostformGroup.get('date')?.touched &&
+          createPostformGroup.get('date')?.hasError('required')
+        "
+      >
+        <small class="error-text">Please enter the date</small>
+      </div>
+    </div>
+    <div>
+      <span> Price: </span>
+      <input
+        type="number"
+        placeholder="Enter the Product Prize"
+        formControlName="Price"
+        class="form-control"
+      />
+      <div
+        *ngIf="
+          createPostformGroup.get('Price')?.touched &&
+          createPostformGroup.get('Price')?.hasError('required')
+        "
+      >
+        <small class="error-text">Please enter the Price</small>
+      </div>
+    </div>
+    <div>
+      <span>Category</span>
+      <select class="form-control" formControlName="Category">
+        <option value="" selected  disabled hidden>Select Category Name:</option>
+        <option *ngFor="let c of categories" [value]="c.categoryName">
+          {{ c.categoryName }}
+        </option>
+      </select>
+    </div>
+    <div>
+      <span> Poster: </span>
+      <input
+        type="file"
+        (change)="convertToBase64($event)"
+        formControlName="ProductImage"
+        class="form-control"
+      />
+      <img
+        id="poster-url"
+        *ngIf="posterUrl"
+        [src]="posterUrl"
+        alt="Selected Poster"
+        style="height:130px"
+        class="form-control image"
+      />
+    </div>
+    <button (click)="OnSave()" class="btn btn-dark button_save">Save</button>
+
+    
+  </form>
+</div>
+</div>
+<!-- <app-footer></app-footer> -->

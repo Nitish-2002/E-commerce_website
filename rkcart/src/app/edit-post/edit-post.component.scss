@@ -1,0 +1,46 @@
+
+.submitted{
+    background-color: rgb(12, 12, 12); 
+    color: whitesmoke;
+    width:800px;
+    height:80px;
+    font-size: 18px;
+    text-align: center;
+    margin-left: 90px;
+    p{
+        padding-top: 25px;
+        // border:3px solid blue;
+    }
+}
+.total__container{
+    margin: 0px;
+    padding: 0px;
+    background-color: #E0E0E0;
+    height: 110vh;
+    //  background-color: #424242;
+  
+}
+.container{
+    height:90vh;
+    width:50vw;
+     padding-top: 40px;
+     margin-top: -30px;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    input{
+        margin:8px;
+        // height:42px
+    }
+ 
+}
+.Easysell-logo{
+    margin-top: 10px;
+    width: 450px;
+    height: 100px;
+    // border: 2px solid;
+}
+.button{
+    margin: 10px;
+    margin-left: 87%;
+    width:100px;
+    height:40px;
+}

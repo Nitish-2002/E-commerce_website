@@ -1,0 +1,361 @@
+<div class="eachpost">
+  <div class="card" style="width: 150rem; height: 60rem; margin-left: 70px">
+    <img
+      [src]="'http://172.22.30.171:3000/images/' + EachPost.FileName"
+      class="card-img-top"
+      alt="..."
+      height="500px"
+      width="300px"
+    />
+    <p>
+      <b class="Title">{{ EachPost.Title }}</b>
+    </p>
+    <div class="buttons">
+      <button type="button" class="btn btn-dark button">Add To Cart</button>
+      <button type="button" class="btn btn-light button">Buy Now</button>
+    </div>
+  </div>
+
+  <div class="eachpost__data">
+    <div
+      class="card text-white bg-dark mb-3 "
+      style="max-width: 35rem; font-size: 26px; margin-left: 0px;"
+    >
+      <div class="card-header" style="font-size: 26px">
+        <a style="font-size: 26px; font-weight: bold; color: red">-46% </a>
+        ₹{{ EachPost.Price }}
+        <span style="text-decoration: line-through; font-size: 16px"
+          >₹{{ APrize }}</span
+        >
+      </div>
+      <div class="card-body">
+        <h5 class="card-title" style="font-size: 26px">
+          ₹500 /month EMI available.
+        </h5>
+        <p class="card-text" style="font-size: 16px">
+          Cardless and No Cost EMI Available on Credit/Debit Card
+        </p>
+      </div>
+    </div>
+    <div class="eachpost__data__summary">
+      <p class="summary">SUMMARY</p>
+      <p><b>Title</b>: {{ EachPost.Title }}</p>
+      <p><b>Seller Type</b>: Dealer</p>
+      <p><b>Price</b>: {{ EachPost.Price }}</p>
+      <p><b>Category</b>: {{ EachPost.Category }}</p>
+      <p><b>Status</b>: {{ EachPost.Status }}</p>
+      <p>
+        <b>Last Updated</b>: {{ EachPost.date | date | date : "MM/dd/yyyy" }}
+      </p>
+      <p><b>Location</b>: {{ EachPost.Address }}</p>
+    </div>
+    <hr />
+    <div class="condition">
+      <p style="font-size: 25px; font-weight: bold; text-decoration: underline">
+        Condition:
+      </p>
+      <div>
+        <button
+          type="button"
+          class="btn btn-outline-warning"
+          style="border: 2px solid rgb(255, 200, 0)"
+        >
+          Fair
+        </button>
+        <button
+          type="button"
+          class="btn btn-warning"
+          style="
+            border: 2px solid rgb(2, 2, 2);
+            background-color: rgb(255, 200, 0);
+            color: white;
+          "
+        >
+          Good
+        </button>
+        <button
+          type="button"
+          class="btn btn-outline-warning"
+          style="border: 2px solid rgb(255, 200, 0)"
+        >
+          Superb
+        </button>
+      </div>
+      <div
+        class="alert alert-secondary"
+        style="width: 700px; margin-top: 12px"
+        role="alert"
+      >
+        <ul>
+          <li>No functional defects</li>
+          <li>Light scratches but no cracks or chips on the phone</li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <div class="eachpost__data__description">
+      <p class="description">DESCRIPTION</p>
+      <p><b>Description</b>: {{ EachPost.Description }}</p>
+      <p><b>COD Available</b>: Yes</p>
+      <!-- Example, assuming COD is available -->
+      <p><b>Free and Easy Returns</b>: Within 7 days of delivery.</p>
+    </div>
+    <hr />
+    <div class="payment__methods">
+      <p>Available Payment Methods</p>
+      <div class="payment__images">
+        <img src="../../assets/icons8-emi-32.png" />
+        <img src="../../assets/icons8-credit-card-cash-withdrawal-32.png" />
+        <img src="../../assets/icons8-bhim-32.png" />
+        <img src="../../assets/icons8-cash-on-delivery-32.png" />
+        <img src="../../assets/icons8-credit-card-cash-withdrawal-32.png" />
+        <img src="../../assets/icons8-banking-32.png" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+<div>
+  <p class="cards__heading">YOU MAY ALSO LIKE: </p>
+  <div class="car">
+    <div class="cards">
+      <ngb-carousel>
+        <ng-template ngbSlide *ngFor="let post of Allposts">
+      <div
+        class="card cardx"
+        style="
+          width: 25rem;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        "
+        
+      >
+        <img
+          [src]="'http://172.22.30.171:3000/images/' + post.FileName"
+          class="card-img-top"
+          style="height: 181.8px"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5
+            class="card-title"
+            style="
+              font-family: Georgia, 'Times New Roman', Times, serif;
+              font-weight: bold;
+              text-align: center;
+            "
+          >
+            {{ post.Title }}
+          </h5>
+          <p><img src="../../assets/icons8-eye-32.png" /> {{ post.Views }}</p>
+          <button
+            class="btn btn-outline-dark button_back"
+            style="margin-left: 150px; border: 2px solid; font-size: 10px"
+            (click)="ViewMore(post.PostId)"
+          >
+            View More
+          </button>
+        </div>
+      </div>
+    </ng-template>
+    </ngb-carousel>
+    </div>
+  </div>
+  
+  
+</div>
+
+
+
+<hr />
+<p class="cards__heading">RK STORE TRUST:</p>
+<div class="protions">
+  <div
+    class="card"
+    style="
+      width: 25rem;
+      height: 28rem;
+      margin-left: 100px;
+      margin-top: 70px;
+      margin-bottom: 200px;
+    "
+  >
+    <div style="height: 100px; padding-top: 15px">
+      <img
+        style="
+          width: 64px;
+          height: 64px;
+          border: 2px solid;
+          padding: 10px;
+          border-radius: 50%;
+          margin-left: 90px;
+        "
+        src="../../assets/icons8-smile-32.png"
+        class="card-img-top"
+        alt="..."
+      />
+    </div>
+    <div class="card-header" style="text-align: center"><b>40+ Lakh</b></div>
+    <div class="card-body" style="height: 10px">
+      <p
+        class="card-text"
+        style="height: 10px; font-size: 18px; text-align: center; margin: 13px"
+      >
+        Happy Customers
+      </p>
+    </div>
+  </div>
+  <div
+    class="card"
+    style="width: 25rem; height: 28rem; margin-top: 70px; margin-bottom: 200px"
+  >
+    <div style="height: 100px; padding-top: 15px">
+      <img
+        style="
+          width: 64px;
+          height: 64px;
+          border: 2px solid;
+          padding: 10px;
+          border-radius: 50%;
+          margin-left: 90px;
+        "
+        src="../../assets/icons8-price-tag-usd-32.png"
+        class="card-img-top"
+        alt="..."
+      />
+    </div>
+    <div class="card-header" style="text-align: center"><b>27+ Lakh</b></div>
+    <div class="card-body" style="height: 10px">
+      <p
+        class="card-text"
+        style="height: 10px; font-size: 18px; text-align: center; margin: 13px"
+      >
+        Devices Sold
+      </p>
+    </div>
+  </div>
+  <div
+    class="card"
+    style="width: 25rem; height: 28rem; margin-top: 70px; margin-bottom: 200px"
+  >
+    <div style="height: 100px; padding-top: 15px">
+      <img
+        style="
+          width: 64px;
+          height: 64px;
+          border: 2px solid;
+          padding: 10px;
+          border-radius: 50%;
+          margin-left: 90px;
+        "
+        src="../../assets/icons8-army-star-32.png"
+        class="card-img-top"
+        alt="..."
+      />
+    </div>
+    <div class="card-header" style="text-align: center"><b>32 Points</b></div>
+    <div class="card-body" style="height: 10px">
+      <p
+        class="card-text"
+        style="height: 10px; font-size: 18px; text-align: center; margin: 13px"
+      >
+        Quality checks.
+      </p>
+    </div>
+  </div>
+  <div
+    class="card"
+    style="width: 25rem; height: 28rem; margin-top: 70px; margin-bottom: 200px"
+  >
+    <div style="height: 100px; padding-top: 15px">
+      <img
+        style="
+          width: 64px;
+          height: 64px;
+          border: 2px solid;
+          padding: 10px;
+          border-radius: 50%;
+          margin-left: 90px;
+        "
+        src="../../assets/icons8-calender-32.png"
+        class="card-img-top"
+        alt="..."
+      />
+    </div>
+    <div class="card-header" style="text-align: center"><b>15 Days</b></div>
+    <div class="card-body" style="height: 10px">
+      <p
+        class="card-text"
+        style="height: 10px; font-size: 18px; text-align: center; margin: 13px"
+      >
+        Refund*
+      </p>
+    </div>
+  </div>
+  <div
+    class="card"
+    style="width: 25rem; height: 28rem; margin-top: 70px; margin-bottom: 200px"
+  >
+    <div style="height: 100px; padding-top: 15px">
+      <img
+        style="
+          width: 64px;
+          height: 64px;
+          border: 2px solid;
+          padding: 10px;
+          border-radius: 50%;
+          margin-left: 90px;
+        "
+        src="../../assets/icons8-warranty-32.png"
+        class="card-img-top"
+        alt="..."
+      />
+    </div>
+    <div class="card-header" style="text-align: center"><b>06 Months</b></div>
+    <div class="card-body" style="height: 10px">
+      <p
+        class="card-text"
+        style="height: 10px; font-size: 18px; text-align: center; margin: 13px"
+      >
+        Free Warranty
+      </p>
+    </div>
+  </div>
+  <div
+    class="card"
+    style="width: 25rem; height: 28rem; margin-top: 70px; margin-bottom: 200px"
+  >
+    <div style="height: 100px; padding-top: 15px">
+      <img
+        style="
+          width: 64px;
+          height: 64px;
+          border: 2px solid;
+          padding: 10px;
+          border-radius: 50%;
+          margin-left: 90px;
+        "
+        src="../../assets/icons8-banking-32.png"
+        class="card-img-top"
+        alt="..."
+      />
+    </div>
+    <div class="card-header" style="text-align: center"><b>200+</b></div>
+    <div class="card-body" style="height: 10px">
+      <p
+        class="card-text"
+        style="height: 10px; font-size: 18px; text-align: center; margin: 13px"
+      >
+        RK Stores.
+      </p>
+    </div>
+  </div>
+</div>
+<button
+  class="btn btn-dark back_button"
+  routerLink="/post/getall"
+  routerActiveLink="active"
+>
+  Back
+</button>

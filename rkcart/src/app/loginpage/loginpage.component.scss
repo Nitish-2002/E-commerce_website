@@ -1,0 +1,157 @@
+@font-face {
+    font-family: 'Storm Gust';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Storm Gust'), url('https://fonts.cdnfonts.com/s/89997/Storm Gust.woff') format('woff');
+}
+@font-face {
+    font-family: 'Jim Nightshade';
+    font-style: normal;
+    src: url('../../assets/jim-nightshade.regular.ttf');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Stromgust';
+    font-style: normal;
+    src: url('../../assets/StormGust-DOg50.ttf');
+    font-weight: 400;
+}
+body{
+    padding: 0px;
+    margin-top: 0px;
+}
+.caption{
+    font-family: 'Stromgust';
+    font-size: 40px;
+    width: 400px;
+    margin-top: 100px;
+    margin-left: 150px;
+    color: azure;
+    a{
+        color: red;
+    }
+}
+.error-text {
+    color: red;
+}
+.header{
+    display:flex;
+    justify-content: space-between;
+    background-color: black;
+    color:white;
+    position: fixed;
+    top:0px;
+    left:0px;
+    width:98.95vw;
+    box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    span{
+        font-family: 'Jim Nightshade';
+        font-size: 40px;
+        width:100px;
+    }
+    div{
+    //   border:2px solid blue;
+      margin-right: 100px;
+      img{
+        margin: 30px;
+        margin-left: 60px;
+        width:100px;
+        height:40px;
+        // border:2px solid red;
+      }
+    }
+}
+.resposnsee{
+    width: 1500px;
+    height: 50px;
+    margin-top:-500px;
+    margin-left:-700px;
+    // border: 5px solid blue;
+}
+b{
+    font-size: 15px;;
+}
+.register {
+    margin-top: 100px;
+    background-image: url('../../assets/login_bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 810px;
+    padding-top: 6%;
+    width: 1705px;
+    display: flex;
+    gap:100px;
+  
+  
+}
+.sales{
+    img{
+        // border: 2px solid blue;
+        margin-top: 320px;
+        margin-left: 90px;
+        width: 55%;
+    }
+}
+.register__part1 {
+    // border: 2px solid white;
+    margin-left: auto;
+    margin-right: auto;
+   padding-top: 5%;
+   padding-left: 2%;
+   padding-right: 2%;
+    height: 610px;
+    width: 500px;
+    border-top-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.59);
+}
+.register__part1__inputs{
+    // border:2px solid blue;
+    margin-top:90px ;
+}
+
+.register__part1__inputs > div {
+    margin-bottom: 20px; 
+}
+
+.register__part1__inputs input {
+    width: 100%; 
+    border-radius: 10px;
+    padding: 10px; 
+}
+.register__part1__texts{
+    text-align: center;
+   margin-top: 10px;
+//    border: 2px solid blue;
+    font-size: 18px;
+}
+.register__part1__images {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    
+    margin-top: 15px; 
+   
+}
+
+
+.register__part1__images img {
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgb(235, 183, 51); 
+    border-radius: 50%;
+    background-color: black;
+}
+.reg-btn{
+   margin-left: 400px;
+//    border: 2px solid blue;
+}
+.registred__login{
+ margin-top: 10px;
+    a{
+        text-decoration: underline;
+        font-weight: bolder;
+    }
+}

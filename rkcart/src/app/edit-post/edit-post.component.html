@@ -1,0 +1,56 @@
+<div class="total__container">
+  <img class="Easysell-logo" src="../../assets/Easysell-logo.png" />
+<div class="container">
+  <div *ngIf="submitted" class="submitted">
+    <p>{{Response}}</p>
+</div>
+  <form [formGroup]="createPostformGroup">
+    <div>
+      Title:
+      <input type="text" formControlName="Title" class="form-control" />
+    </div>
+    <div>
+      Description:
+      <input type="text" formControlName="Description" class="form-control" />
+    </div>
+    <div>
+      Address:
+      <input type="text" formControlName="Address" class="form-control" />
+    </div>
+    <div>
+      Date:
+      <input type="date" formControlName="date" class="form-control" />
+    </div>
+    <div>
+      Price:
+      <input type="number" formControlName="Price" class="form-control" />
+    </div>
+    <div>
+      Category:
+      <select class="form-control" formControlName="Category">
+        <option value="Select Category Name:">Select Category Name:</option>
+        <option *ngFor="let c of categories" [value]="c.categoryName">
+          {{ c.categoryName }}
+        </option>
+      </select>
+    </div>
+    <div>
+      Poster:
+      <input type="file" formControlName="ProductImage" class="form-control" />
+      <img
+        id="poster-url"
+        *ngIf="posterUrl"
+        width="100px"
+        height="100px"
+        [src]="posterUrl"
+        alt="Selected Poster"
+        
+      />
+    </div>
+
+    <button class="btn btn-primary button" (click)="OnUpdate()">Update</button> 
+
+   
+  </form>
+</div>
+</div>

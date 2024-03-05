@@ -1,0 +1,52 @@
+.car{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+  .cards{
+    display: flex;
+    gap:30px;
+    flex-wrap: wrap;
+  }
+  .button:hover{
+    color: azure;
+  }
+ .edit{
+  border:2px solid greenyellow;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ }
+ .submitted{
+  background-color: rgb(12, 12, 12); 
+  color: whitesmoke;
+  width:800px;
+  height:80px;
+  font-size: 18px;
+  text-align: center;
+  margin-left: 500px;
+  z-index: 4;
+  position: absolute;
+  p{
+      padding-top: 25px;
+  }
+}
+ .buttons{
+  display: flex;
+  button{
+    margin: 10px;
+  }
+.edit:hover{
+  color: white;
+}
+.delete:hover{
+  color: white;
+}
+}
+ .delete{
+  border: 2px solid red;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ }
+  .card:nth-child(4n+1) {
+    margin-left: 30px;
+  }
+.noPost{
+  margin-left: 7%;
+}

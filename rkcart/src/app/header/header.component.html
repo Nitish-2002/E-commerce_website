@@ -1,0 +1,127 @@
+<div class="header">
+  <nav
+    class="navbar navbar-expand-sm bg-dark navbar-dark navbar__nav"
+    style="margin-bottom: 0px"
+  >
+    <!-- <a class="navbar-brand logo" href="#">RK</a> -->
+    <img
+      src="../../assets/logo-removebg-preview.png"
+      width="120px"
+      height="90px"
+    />
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse navbar-items" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a
+            routerLink="/post/getall"
+            [routerLinkActive]="['selected']"
+            class="nav-link"
+            >Home <span class="sr-only"></span
+          ></a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            routerLink="/post/createpost"
+            [routerLinkActive]="['selected']"
+            class="nav-link"
+            >Add Product</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link text"
+            [routerLinkActive]="['selected']"
+            routerLink="/post/myproducts"
+            >My Products</a
+          >
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            role="button"
+            data-bs-toggle="dropdown"
+            (click)="toggeleDropdown()"
+            *ngIf="selectedCategory; else categoryDropdown"
+            >{{ selectedCategory }}</a
+          >
+          <ng-template #categoryDropdown>
+            <a
+              class="nav-link dropdown-toggle"
+              role="button"
+              (click)="toggeleDropdown()"
+              data-bs-toggle="dropdown"
+              >Category</a
+            >
+          </ng-template>
+          <ul class="dropdown-menu ul" [class.show]="isDropdown">
+            <!-- <p (click)="categoryAll()">All</p> -->
+            <p
+              class="dropdown-item"
+              *ngFor="let data of Categories"
+              (click)="Category(data.categoryName)"
+            >
+              {{ data.categoryName }}
+            </p>
+            <p
+              class="dropdown-item"
+              routerLink="/post/addcategory"
+              [routerLinkActive]="['selected']"
+            >
+              Add Category+
+            </p>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="searchbar">
+        <input
+          class="form-control mr-sm-2 search"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+          #search
+          (keyup)="searchValue(search.value)"
+        />
+        <button class="btn btn-outline-success my-2 my-sm-0 text" type="submit">
+          Search
+        </button>
+      </div>
+      <div class="persondata">
+        <li class="nav-item dropdown">
+          <img
+            class="nav-link dropdown-toggle"
+            role="button"
+            data-bs-toggle="dropdown"
+            src="../../assets/icons8-person-40.png"
+          />
+          <!-- <p class="username">{{ username }}</p> -->
+          <ul class="dropdown-menu ul">
+            <p class="dropdown-item" routerLink="/post/myprofile"
+            [routerLinkActive]="['selected']">My Profile</p>
+            <p
+              class="dropdown-item"
+              routerLink="/post/myproducts"
+              [routerLinkActive]="['selected']"
+            >
+              My Products
+            </p>
+            <p class="dropdown-item" (click)="Logout()">Logout</p>
+          </ul>
+        </li>
+      </div>
+      <div></div>
+    </div>
+  </nav>
+</div>
